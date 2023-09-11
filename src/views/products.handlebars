@@ -5,7 +5,7 @@
             <div class="col d-flex align-items-center justify-content-end">
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="/">Inicio</a>
+                        <a class="nav-link text-dark" href="/products">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="/realtimeproducts">Real Time Products</a>
@@ -19,6 +19,18 @@
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="user-data">
+                <h1>Bienvenido, {{user.first_name}} {{user.last_name}}</h1>
+                <p>Tu correo electrónico es: {{user.email}}</p>
+                <p>Tu rol es: {{user.role}}</p>
+            </div>
+        </div>
+        <form action="/api/sessions/logout" method="POST">
+            <button type="submit" class="btn-logout">Cerrar Sesión</button>
+        </form>
     </div>
     <div class="shopContent">
         {{#each products.payload}}
